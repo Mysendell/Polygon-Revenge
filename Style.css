@@ -78,7 +78,7 @@ button a:hover, #Jogar:hover {
     display: none;
 }
 
-h1::selection, h2::selection, p::selection {
+h1::selection, h2::selection, p::selection, ul::selection, li::selection {
     background-color: white;
     color: black;
   }
