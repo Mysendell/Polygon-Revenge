@@ -98,7 +98,7 @@ battle {
     }
 }
 
-#enemy {
-    offset: auto;
-    animation: enemy 10s alternate linear infinite;
+health {
+    font-size: 4.5vh;
+    padding-left: 1vh;
 }
