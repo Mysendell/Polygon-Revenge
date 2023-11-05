@@ -65,11 +65,11 @@ button {
     cursor: pointer;
 }
 
-button a {
+a {
     text-decoration: none;
 }
 
-button a:hover, #Jogar:hover {
+a:hover, #Jogar:hover {
     font-size: 1.1em;
     transition: font-size 0.15s;
 }
@@ -78,7 +78,27 @@ button a:hover, #Jogar:hover {
     display: none;
 }
 
-h1::selection, h2::selection, p::selection, ul::selection, li::selection {
+*::selection {
     background-color: white;
     color: black;
   }
+
+battle {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+
+@keyframes enemy{
+    from{
+        offset-distance: 0%;
+    }
+    to{
+        offset-distance: 100%;
+    }
+}
+
+health {
+    font-size: 4.5vh;
+    padding-left: 1vh;
+}
