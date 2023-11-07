@@ -1,15 +1,15 @@
 const timer = ms => new Promise(res => setTimeout(res, ms));
 let inimigos = [
-    {hp: 10, damage: 5, image: "Sketch", speed: 1},
-    {hp: 15, damage: 7, image: "Sketch", speed: 1},
-    {hp: 0},
-    {hp: 20, damage: 10, image: "Sketch", speed: 5}];
+    {hp: 10, damage: 5, image: "Sketch", speed: 1, time:1000},
+    {hp: 15, damage: 7, image: "Sketch", speed: 1, time:1000},
+    {hp: 0, time:2000},
+    {hp: 20, damage: 10, image: "Sketch", speed: 5, time:1000}];
 
 async function handler(){
     for (enemy of inimigos){
         if (enemy.hp > 0)
             spawnEnemy(enemy);
-        await timer(1000);
+        await timer(enemy.time);
     }
 }
 
