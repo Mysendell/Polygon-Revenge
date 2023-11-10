@@ -1,6 +1,6 @@
 let turrets = [
-    {atk: 0, dano: 0, custo: 0, image: "Sketch"},
-    {atk: 0, dano: 0, custo: 0, image: "Sketch2"}
+    {atk: 0, dano: 0, custo: 0, image: "turret-placeholder"},
+    {atk: 0, dano: 0, custo: 0, image: "turret2-placeholder"}
 ];
 
 let turID = 0;
@@ -17,7 +17,7 @@ function changeID(e) {
 function spawnTurret(e) {
     let newEl = document.createElement("turret");
     let image = document.createElement("img");
-    image.src = `${turrets[turID].image}.png`;
+    image.src = `imgs/${turrets[turID].image}.png`;
     newEl.appendChild(image);
     image.style.width = "10vmin";
     image.style.height = "10vmin";

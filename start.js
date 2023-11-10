@@ -4,6 +4,7 @@ const placarEl = document.querySelector("#Placar");
 const creditosEl = document.querySelector("#Creditos");
 const battleEl = document.querySelector("battle");
 const healthEl = document.querySelector("health");
+const timer = ms => new Promise(res => setTimeout(res, ms));
 let playerHp = 100;
 
 function startGame() {
