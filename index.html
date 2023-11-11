@@ -13,9 +13,13 @@
         <button id="Placar"><a href="placar.html"><h2>Placar</h2></a></button>
         <button id="Creditos"><a href="credits.html"><h2>Créditos</h2></a></button>
     </main>
-    <battle class="invisible">
-        <health>HP: 0</health>
-    </battle>
+    <div id="side" class="invisible">
+        <div id="health">HP: 0</div>
+        <div id="credits">$: 0</div>
+        <ul id="selection"></ul>
+    </div>
+    <div id="battle" class="invisible">
+    </div>
     <script src="start.js"></script>
     <script src="enemies.js"></script>
     <script src="turrets.js"></script>

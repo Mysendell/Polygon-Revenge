@@ -40,7 +40,8 @@ function viewport_convert(px = 0, vw = 0, vh = 0){
 }
 
 function spawnEnemy(inimigo) {
-    let newEl = document.createElement("enemy");
+    let newEl = document.createElement("span");
+    newEl.classList.add("enemy");
     let image = document.createElement("img");
     image.src = `imgs/${inimigo.image}.png`;
     newEl.appendChild(image);
