@@ -1,15 +1,22 @@
-const timer = ms => new Promise(res => setTimeout(res, ms));
+let triangle = {hp: 5, damage: 2, image: "triangle", speed: 1.5, size: 0.8};
+let square = {hp: 10, damage: 10, image: "square", speed: 1, size: 1};
+let pentagon = {hp: 20, damage: 25, image: "pentagon", speed: 0.8, size: 1.2};
+let octagon = {hp: 35, damage: 30, image: "octagon", speed: 0.6, size: 1.5};
+let dodecagon = {hp: 50, damage: 100, image: "dodecagon", speed: 0.4, size: 2};
+
 let inimigos = [
-    {hp: 10, damage: 5, image: "Sketch", speed: 1, time:1000},
-    {hp: 15, damage: 7, image: "Sketch", speed: 1, time:1000},
-    {hp: 0, time:2000},
-    {hp: 20, damage: 10, image: "Sketch", speed: 5, time:1000}];
+    dodecagon, 2000,
+    octagon, 2000,
+    pentagon, 2000,
+    square, 2000,
+    triangle, 1000
+];
 
 async function handler(){
-    for (enemy of inimigos){
-        if (enemy.hp > 0)
-            spawnEnemy(enemy);
-        await timer(enemy.time);
+    for (let i=0; i < inimigos.length; i++){
+        if (inimigos[i].hp > 0)
+            spawnEnemy(inimigos[i]);
+        await timer(inimigos[++i]);
     }
 }
 
@@ -33,14 +40,14 @@ function viewport_convert(px = 0, vw = 0, vh = 0){
 }
 
 function spawnEnemy(inimigo) {
-    let newEl = document.createElement("enemy");
+    let newEl = document.createElement("span");
+    newEl.classList.add("enemy");
     let image = document.createElement("img");
-    image.src = `${inimigo.image}.png`;
+    image.src = `imgs/${inimigo.image}.png`;
     newEl.appendChild(image);
-    image.style.width = "10vmin";
-    image.style.height = "10vmin";
+    image.style.width = `${12*inimigo.size}vmin`;
+    image.style.height = `${12*inimigo.size}vmin`;
     newEl.style.position = "absolute";
-    newEl.id = "enemy";
     newEl.dataset.hp = inimigo.hp;
     newEl.dataset.damage = inimigo.damage;
     newEl.addEventListener("animationend", (el) => {ded(el);});
@@ -52,11 +59,11 @@ function spawnEnemy(inimigo) {
 function ded(el) {
     if (el.currentTarget.dataset.hp > 0){
         playerHp -= el.currentTarget.dataset.damage;
-        healthEl.innerHTML = `HP: ${playerHp}`;
+        healthEl.innerHTML = playerHp;
     }
     el.currentTarget.remove();
 }
 
 function Move(newEl) {
-    newEl.style.offset = `path("M ${viewport_convert(0,50,0)} ${0} L ${viewport_convert(0,50,0)} ${viewport_convert(0,0,50)} L ${viewport_convert(0,80,0)} ${viewport_convert(0,0,50)} L ${viewport_convert(0,80,0)} ${viewport_convert(0,00, 10)} L ${viewport_convert(0,20,0)} ${viewport_convert(0,00, 10)} L ${viewport_convert(0,20,0)} ${viewport_convert(0,00, 60)} L ${viewport_convert(0,50,0)} ${viewport_convert(0,00, 60)} L ${viewport_convert(0,50,0)} ${viewport_convert(0, 0, 95)}") auto`;
+    newEl.style.offset = `path("M ${viewport_convert(0,50,0)} ${0} L ${viewport_convert(0,50,0)} ${viewport_convert(0,0,50)} L ${viewport_convert(0,80,0)} ${viewport_convert(0,0,50)} L ${viewport_convert(0,80,0)} ${viewport_convert(0, 0, 10)} L ${viewport_convert(0,20,0)} ${viewport_convert(0, 0, 10)} L ${viewport_convert(0,20,0)} ${viewport_convert(0, 0, 60)} L ${viewport_convert(0,50,0)} ${viewport_convert(0, 0, 60)} L ${viewport_convert(0,50,0)} ${viewport_convert(0, 0, 95)}") auto`;
 }

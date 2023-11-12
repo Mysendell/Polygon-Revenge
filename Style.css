@@ -8,6 +8,7 @@ html, body{
 }
 
 body {
+    font-size: 3vmin;
     background-color: black;
     border: white solid;
 }
@@ -28,7 +29,6 @@ body {
 }
 
 main {
-    font-size: 3.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,7 +70,7 @@ a {
 }
 
 a:hover, #Jogar:hover {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     transition: font-size 0.15s;
 }
 
@@ -83,9 +83,11 @@ a:hover, #Jogar:hover {
     color: black;
   }
 
-battle {
-    display: block;
-    width: inherit;
+#battle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85vw;
     height: inherit;
   }
 
@@ -98,7 +100,91 @@ battle {
     }
 }
 
-health {
+#health, #money, #atk, #speed, #cost {
     font-size: 4.5vh;
-    padding-left: 1vh;
+    padding-left: 0.5vh;
+}
+
+#selection {
+    position: relative;
+    padding: 0;
+    list-style: none;
+    width: inherit;
+    height: 55vh;
+    border: white 0.15rem solid;
+    border-left: 0;
+    overflow-y:scroll;
+    direction: rtl;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+}
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+}
+
+#selection img{
+    width: inherit;
+    height: inherit;
+}
+
+#selection li{
+    margin: 3vh auto;
+}
+
+.selected, #selection li:hover{
+    box-shadow: 0 0 1vmin 0.3vmin white;
+}
+
+#selection *{
+    padding: 0;
+    width: 10vmin;
+    height: 10vmin;
+}
+
+#side{
+    border-right: white solid;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15vw;
+    height: inherit;
+}
+
+#side *{
+    font-size: 1em;
+}
+
+#icon{
+    width: 5vmin;
+    height: 5vmin;
+}
+
+#upgrade{
+    min-height: 6.5vmin;
+    height: min-content;
+    max-height: max-content;
+    max-width: 15vw;
+    width: fit-content;
+    margin: 1vmin auto 2vmin;
+}
+
+#upgrade button{
+    border-radius: 10%;
+    padding: 0 1.5vw;
+    text-align: center;
+    background-color: white;
+    max-width: inherit;
+    overflow-wrap: break-word;
+    color: black;
+    min-height: inherit;
+    height: inherit;
+    max-height: inherit;
+}
+
+.turret{
+    width: fit-content;
+    height: fit-content;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="imgs/turret2-placeholder.png">
     <title>Polygon Revenge</title>
 </head>
 <body>
@@ -13,10 +14,21 @@
         <button id="Placar"><a href="placar.html"><h2>Placar</h2></a></button>
         <button id="Creditos"><a href="credits.html"><h2>Créditos</h2></a></button>
     </main>
-    <battle class="invisible">
-        <health>HP: 0</health>
-    </battle>
+    <div id="side" class="invisible">
+        <div><img src="imgs/hp-placeholder.png" id="icon"><span id="health"></span></div>
+        <div><img src="imgs/money-placeholder.png" id="icon"><span id="money"></span></div>
+        <ul id="selection"></ul>
+        <div id="stats" class="invisible">
+            <div><img src="imgs/atk-placeholder.png" id="icon"><span id="atk"></span></div>
+            <div><img src="imgs/speed-placeholder.png" id="icon"><span id="speed"></span></div>
+            <div id="upgrade" class="invisible"><button >Upgrade</button></div>
+            <div><img src="imgs/money-placeholder.png" id="icon"><span id="cost"></span></div>
+        </div>
+    </div>
+    <div id="battle" tabindex="0" class="invisible">
+    </div>
     <script src="start.js"></script>
     <script src="enemies.js"></script>
+    <script src="turrets.js"></script>
 </body>
 </html>
