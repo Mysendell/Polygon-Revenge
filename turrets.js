@@ -148,8 +148,11 @@ function spawnTurret(e) {
             selected = false;
             upgDivEl.classList.add("invisible");
             statsEl.classList.add("invisible");
-        }else 
-            if(selected) showStats(selected.value, selected.dataset.version, 1);
+        }else if(selected){
+            showStats(selected.value, selected.dataset.version, 1);
+            if(turrets[selected.value].length > parseInt(selected.dataset.version))
+                upgDivEl.classList.remove("invisible");
+        }
         if(!turretselected)
             upgDivEl.classList.add("invisible");
     });
