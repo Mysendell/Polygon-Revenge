@@ -59,7 +59,7 @@ function spawnEnemy(inimigo) {
 function ded(el) {
     if (el.currentTarget.dataset.hp > 0){
         playerHp -= el.currentTarget.dataset.damage;
-        healthEl.innerHTML = `HP: ${playerHp}`;
+        healthEl.innerHTML = playerHp;
     }
     el.currentTarget.remove();
 }

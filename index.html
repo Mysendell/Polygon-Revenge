@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="imgs/turret2-placeholder.png">
     <title>Polygon Revenge</title>
 </head>
 <body>
@@ -14,11 +15,16 @@
         <button id="Creditos"><a href="credits.html"><h2>Créditos</h2></a></button>
     </main>
     <div id="side" class="invisible">
-        <div id="health">HP: 0</div>
-        <div id="credits">$: 0</div>
+        <div><img src="imgs/hp-placeholder.png" id="icon"><span id="health"></span></div>
+        <div><img src="imgs/money-placeholder.png" id="icon"><span id="money"></span></div>
         <ul id="selection"></ul>
+        <div id="stats" class="invisible">
+            <div><img src="imgs/atk-placeholder.png" id="icon"><span id="atk"></span></div>
+            <div><img src="imgs/speed-placeholder.png" id="icon"><span id="speed"></span></div>
+            <div><img src="imgs/money-placeholder.png" id="icon"><span id="cost"></span></div>
+        </div>
     </div>
-    <div id="battle" class="invisible">
+    <div id="battle" tabindex="0" class="invisible">
     </div>
     <script src="start.js"></script>
     <script src="enemies.js"></script>

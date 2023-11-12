@@ -100,9 +100,9 @@ a:hover, #Jogar:hover {
     }
 }
 
-#health, #credits {
+#health, #money, #atk, #speed, #cost {
     font-size: 4.5vh;
-    padding-left: 1vh;
+    padding-left: 0.5vh;
 }
 
 #selection {
@@ -151,4 +151,9 @@ a:hover, #Jogar:hover {
     top: 0;
     width: 15vw;
     height: inherit;
+}
+
+#icon {
+    width: 5vmin;
+    height: 5vmin;
 }
