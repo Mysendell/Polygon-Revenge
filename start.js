@@ -12,9 +12,11 @@ const moneyEl = document.querySelector("#money");
 const atkEl = document.querySelector("#atk");
 const speedEl = document.querySelector("#speed");
 const costEl = document.querySelector("#cost");
+const upgDivEl = document.querySelector("#upgrade");
+const upgButtonEl = upgDivEl.querySelector("button");
 const timer = ms => new Promise(res => setTimeout(res, ms));
 let playerHp = 100;
-let money = 0;
+let money = 100;
 let turretButtons = [];
 
 function startGame() {
