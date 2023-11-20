@@ -34,6 +34,26 @@ main {
     align-items: center;
 }
 
+.map {
+    border: white solid;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+#map-select {
+    height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.map img {
+    display: block;
+    width: 25vmin;
+    height: 25vmin;
+}
+
 footer {
     margin-top: 10vh;
     display: flex;
