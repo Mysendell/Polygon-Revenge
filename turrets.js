@@ -12,8 +12,10 @@ function showStats(index, version=0, upgrade=0) {
     statsEl.classList.remove("invisible");
     atkEl.innerHTML = turrets[index][version].atk;
     speedEl.innerHTML = turrets[index][version].speed;
-    if(turrets[index].length > parseInt(version)+upgrade)
+    if(turrets[index].length > parseInt(version)+upgrade){
+        costEl.parentNode.classList.remove("invisible");
         costEl.innerHTML = turrets[index][parseInt(version)+upgrade].custo;
+    }
     else{
         costEl.parentNode.classList.add("invisible");
         upgDivEl.classList.add("invisible");
@@ -61,15 +63,6 @@ for (let i=0; i<turrets.length;i++){
     button.addEventListener("click", (e) => {
         buttonToggle(e);
     });
-    button.addEventListener("keyup", (e) => {
-        if(e.key === 'x') {
-            smtSelected = 0;
-            turretButtons[turID].classList.remove("selected");
-            turID = -1;
-            statsEl.classList.remove("toggled");
-            statsEl.classList.add("invisible");
-        }
-    });
     img.src = `imgs/${turrets[i][0].image}.png`;
     button.appendChild(img);
     li.appendChild(button);
@@ -94,6 +87,7 @@ for (let i=0; i<turrets.length;i++){
 
 function changeID(increment) {
     smtSelected = 1;
+    console.log(turID);
     if(turID != -1) {
         turretButtons[turID].classList.remove("selected");
         turID = (turID + increment + turrets.length) % turrets.length;
@@ -150,8 +144,9 @@ function spawnTurret(e) {
             statsEl.classList.add("invisible");
         }else if(selected){
             showStats(selected.value, selected.dataset.version, 1);
-            if(turrets[selected.value].length > parseInt(selected.dataset.version))
+            if(turrets[selected.value].length > parseInt(selected.dataset.version)+1){
                 upgDivEl.classList.remove("invisible");
+            }
         }
         if(!turretselected)
             upgDivEl.classList.add("invisible");
@@ -162,7 +157,7 @@ function spawnTurret(e) {
     smtSelected = 0;
 }
 
-battleEl.addEventListener("mouseup", (e) => {
+bodyEl.addEventListener("mouseup", (e) => {
     if(turID != -1){
         spawnTurret(e);
     }
@@ -197,3 +192,22 @@ upgButtonEl.addEventListener("mouseout", () => {
 });
 
 upgButtonEl.addEventListener("click", upgrader);
+
+bodyEl.addEventListener("keyup", (e) => {
+    if(e.key === 'x') {
+        smtSelected = 0;
+        console.log(turID);
+        if(turID != -1){
+            turretButtons[turID].classList.remove("selected");
+            turID = -1;
+        }
+        statsEl.classList.remove("toggled");
+        statsEl.classList.add("invisible");
+        console.log("abc");
+        if(selected){
+            selected.classList.remove("selected");
+            turretselected = false;
+            selected = false;
+        }
+    }
+});
