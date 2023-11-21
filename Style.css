@@ -34,7 +34,7 @@ main {
     align-items: center;
 }
 
-.map {
+.map-button {
     border: white solid;
     padding: 0;
     width: fit-content;
@@ -43,12 +43,15 @@ main {
 
 #map-select {
     height: inherit;
+}
+
+#map-select:not(.invisible) {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.map img {
+.map-button img {
     display: block;
     width: 25vmin;
     height: 25vmin;
@@ -90,7 +93,7 @@ a {
 }
 
 a:hover, #Jogar:hover {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: font-size 0.15s;
 }
 
@@ -109,6 +112,7 @@ a:hover, #Jogar:hover {
     top: 0;
     width: 85vw;
     height: inherit;
+    overflow: hidden;
   }
 
 @keyframes enemy{
@@ -207,4 +211,15 @@ a:hover, #Jogar:hover {
 .turret{
     width: fit-content;
     height: fit-content;
+}
+
+#map {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.map-button:hover {
+    transform: scale(0.9);
+    transition: transform 0.15s;
 }
