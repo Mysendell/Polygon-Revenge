@@ -5,18 +5,17 @@ let octagon = {hp: 35, damage: 30, image: "octagon", speed: 0.6, size: 1.5};
 let dodecagon = {hp: 50, damage: 100, image: "dodecagon", speed: 0.4, size: 2};
 
 let inimigos = [
-    dodecagon, 2000,
-    octagon, 2000,
-    pentagon, 2000,
-    square, 2000,
-    triangle, 1000
+    [dodecagon, 2000, octagon, 2000, pentagon, 2000, square, 2000, triangle, 1000],
+    [triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000, triangle, 1000],
+    [dodecagon, 2000, dodecagon, 2000, dodecagon, 2000, dodecagon, 2000, dodecagon, 2000]
 ];
 
-async function handler(){
-    for (let i=0; i < inimigos.length; i++){
-        if (inimigos[i].hp > 0)
-            spawnEnemy(inimigos[i]);
-        await timer(inimigos[++i]);
+async function handler(mapas){
+    enemies = inimigos[mapas]
+    for (let i=0; i < enemies.length; i++){
+        if (enemies[i].hp > 0)
+            spawnEnemy(enemies[i]);
+        await timer(enemies[++i]);
     }
 }
 
