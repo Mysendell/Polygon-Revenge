@@ -1,7 +1,13 @@
 let turrets = [
     [{atk: 10, speed: 2, custo: 15, image: "turret2-placeholder"},{atk: 20, speed: 4, custo: 30, image: "turret2-placeholder"}],
     [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}]
+    [{atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
+    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}]
 ];
 
 let turID = -1;

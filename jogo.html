@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/turret2-placeholder.png">
     <title>Polygon Revenge</title>
 </head>
 <body>
     <nav id="map-select">
-        <button class="map-button" value="0"><img src="imgs/Sketch.png"></button>
-        <button class="map-button" value="1"><img src="imgs/Sketch.png"></button>
-        <button class="map-button" value="2"><img src="imgs/Sketch.png"></button>
+        <button id="map-button" value="1"><img src="imgs/Sketch.png"></button>
+        <div id="selector"><p><img src="imgs/less.png" id="map-less"><span id="map-number">1</span><img src="imgs/more.png" id="map-plus"></p></div>
     </nav>
     <main id="side" class="invisible">
         <div><img src="imgs/hp-placeholder.png" id="icon"><span id="health"></span></div>
@@ -30,7 +30,6 @@
         </footer>  
     </div>
    
-
     <script src="JS/jQuery.js"></script>
     <script src="JS/pory.js"></script>
     <script>

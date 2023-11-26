@@ -39,7 +39,7 @@ main, header{
     align-items: center;
 }
 
-.map-button {
+#map-button {
     border: white solid;
     padding: 0;
     width: fit-content;
@@ -56,7 +56,7 @@ main, header{
     align-items: center;
 }
 
-.map-button img {
+#map-button img {
     display: block;
     width: 25vmin;
     height: 25vmin;
@@ -224,7 +224,7 @@ a:hover, #Jogar:hover {
     height: inherit;
 }
 
-.map-button:hover {
+#map-button:hover {
     transform: scale(0.9);
     transition: transform 0.15s;
 }
@@ -255,4 +255,17 @@ a:hover, #Jogar:hover {
     display:grid;
     grid-template-columns: 70vw 9vw;
     position: relative;
+}
+
+#selector {
+    position: absolute;
+}
+
+#selector img {
+    width: 20px;
+    height: 45px;
+}
+
+#selector img:hover {
+    cursor: pointer;
 }
