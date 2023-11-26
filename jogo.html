@@ -33,8 +33,24 @@
 
     <script src="JS/jQuery.js"></script>
     <script src="JS/pory.js"></script>
+    <script>
+        let conclusao = localStorage.getItem('tema');
+        if (conclusao == 2){
+        $(poryZEl).css('background-image', 'url(imgs/474-porygon-z-g.png)');
+        $(poryZEl).css('background-color', 'rgb(0, 0, 0)');
+        entrePgs = 1;
+        trocaCor(1);
+        }
+        else{
+        $(poryZEl).css('background-image', 'url(imgs/pory-base.png)');
+        $(poryZEl).css('background-color', 'rgb(255, 255, 255)');
+        entrePgs = 2;
+        trocaCor(2);        
+        }
+
+    </script>
     <script src="JS/start.js"></script>
     <script src="JS/game/enemies.js"></script>
     <script src="JS/game/turrets.js"></script>
-</body>
+</body>    
 </html>
