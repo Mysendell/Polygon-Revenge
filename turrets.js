@@ -162,7 +162,7 @@ function spawnTurret(e) {
     turID = -1;
     smtSelected = 0;
 }
-
+let bodyEl = document.querySelector('body');
 bodyEl.addEventListener("mouseup", (e) => {
     if(turID != -1){
         spawnTurret(e);
