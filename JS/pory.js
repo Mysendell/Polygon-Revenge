@@ -29,3 +29,18 @@ function trocaCor(num){
     });
 }
 
+function novoSite(conclusao) {
+    if (conclusao == 2){
+        $(poryZEl).css('background-image', 'url(imgs/474-porygon-z-g.png)');
+        $(poryZEl).css('background-color', 'rgb(0, 0, 0)');
+        entrePgs = 1;
+        trocaCor(1);
+        }
+        else{
+        $(poryZEl).css('background-image', 'url(imgs/pory-base.png)');
+        $(poryZEl).css('background-color', 'rgb(255, 255, 255)');
+        entrePgs = 2;
+        trocaCor(2);        
+        }
+
+}
