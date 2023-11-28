@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/turret2-placeholder.png">
+    <title>Polygon Revenge</title>
+</head>
+<body>
+    <nav id="map-select">
+        <button id="map-button" value="1"><img src="imgs/Sketch.png"></button>
+        <div id="selector"><p><img src="imgs/less.png" id="map-less"><span id="map-number">1</span><img src="imgs/more.png" id="map-plus"></p></div>
+    </nav>
+    <main id="side" class="invisible">
+        <div><img src="imgs/hp-placeholder.png" id="icon"><span id="health"></span></div>
+        <div><img src="imgs/money-placeholder.png" id="icon"><span id="money"></span></div>
+        <ul id="selection"></ul>
+        <div id="stats" class="invisible">
+            <div><img src="imgs/atk-placeholder.png" id="icon"><span id="atk"></span></div>
+            <div><img src="imgs/speed-placeholder.png" id="icon"><span id="speed"></span></div>
+            <div id="upgrade" class="invisible"><button >Upgrade</button></div>
+            <div><img src="imgs/money-placeholder.png" id="icon"><span id="cost"></span></div>
+        </div>
+    </main>
+    <div id="battle" tabindex="0" class="invisible">
+        <img id="map">
+        <footer>
+        <a href="index.html" id="back-button">Back</a>
+        </footer>  
+    </div>
+   
+    <script src="JS/jQuery.js"></script>
+    <script src="JS/pory.js"></script>
+    <script>
+        let conclusao = localStorage.getItem('tema');
+        novoSite(conclusao);
+    </script>
+    <script src="JS/start.js"></script>
+    <script src="JS/game/enemies.js"></script>
+    <script src="JS/game/turrets.js"></script>
+</body>    
+</html>

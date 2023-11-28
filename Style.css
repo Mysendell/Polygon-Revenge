@@ -11,6 +11,9 @@ body {
     font-size: 3vmin;
     background-color: black;
     border: white solid;
+    background-image: url(imgs/474-porygon-z-g.png);
+    background-repeat:no-repeat;
+    background-size:contain;
 }
 
 * {
@@ -26,12 +29,37 @@ body {
     margin-top: 10vh;
     margin-bottom: 0vh;
     height: 35vh;
+    grid-column-start: 1;
+    position: relative;
 }
 
-main {
+main, header{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#map-button {
+    border: white solid;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+#map-select {
+    height: inherit;
+}
+
+#map-select:not(.invisible) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#map-button img {
+    display: block;
+    width: 25vmin;
+    height: 25vmin;
 }
 
 footer {
@@ -70,7 +98,7 @@ a {
 }
 
 a:hover, #Jogar:hover {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: font-size 0.15s;
 }
 
@@ -89,6 +117,7 @@ a:hover, #Jogar:hover {
     top: 0;
     width: 85vw;
     height: inherit;
+    overflow: hidden;
   }
 
 @keyframes enemy{
@@ -151,6 +180,7 @@ a:hover, #Jogar:hover {
     top: 0;
     width: 15vw;
     height: inherit;
+    background-color: rgb(0, 0, 0);
 }
 
 #side *{
@@ -187,4 +217,56 @@ a:hover, #Jogar:hover {
 .turret{
     width: fit-content;
     height: fit-content;
+}
+
+#map {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+#map-button:hover {
+    transform: scale(0.9);
+    transition: transform 0.15s;
+}
+
+#back-button{
+    position: absolute;
+    right: 2.5%;
+    bottom: 2.5%;
+}
+
+.tema-claro-escuro{
+    color: rgb(255, 255, 255);
+}
+
+#pory{
+    background-image: url(imgs/ani_bw_137.gif);
+    background-repeat:no-repeat;
+    grid-column: 2;
+    width: 8vw;
+    height: 8vh;
+    border: none;
+    background-size: contain;
+    position: absolute;
+    top: -6vh;
+    
+}
+#porygrid{
+    display:grid;
+    grid-template-columns: 70vw 9vw;
+    position: relative;
+}
+
+#selector {
+    position: absolute;
+}
+
+#selector img {
+    width: 20px;
+    height: 45px;
+}
+
+#selector img:hover {
+    cursor: pointer;
 }

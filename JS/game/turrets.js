@@ -1,13 +1,7 @@
 let turrets = [
     [{atk: 10, speed: 2, custo: 15, image: "turret2-placeholder"},{atk: 20, speed: 4, custo: 30, image: "turret2-placeholder"}],
     [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}],
-    [{atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret-placeholder"}]
+    [{atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}, {atk: 0, speed: 0, custo: 0, image: "turret2-placeholder"}]
 ];
 
 let turID = -1;
@@ -162,8 +156,8 @@ function spawnTurret(e) {
     turID = -1;
     smtSelected = 0;
 }
-let bodyEl = document.querySelector('body');
-bodyEl.addEventListener("mouseup", (e) => {
+
+battleEl.addEventListener("mouseup", (e) => {
     if(turID != -1){
         spawnTurret(e);
     }

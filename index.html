@@ -8,27 +8,24 @@
     <title>Polygon Revenge</title>
 </head>
 <body>
+    <header>
+        <span id="porygrid"><h1 id="title" class="tema-claro-escuro">Porygon Revenge <button id="pory"></button></h1></span>
+    </header>
+
     <main>
-        <h1 id="title">Polygon Revenge</h1>
-        <button id="Jogar"><h2>Jogar</h2></button>
-        <button id="Placar"><a href="placar.html"><h2>Placar</h2></a></button>
-        <button id="Creditos"><a href="credits.html"><h2>Créditos</h2></a></button>
+        <button id="Jogar"><a href="jogo.html"><h2 class="tema-claro-escuro">Jogar</h2></a></button>
+        <button id="Placar"><a href="placar.html"><h2 class="tema-claro-escuro">Placar</h2></a></button>
+        <button id="Creditos"><a href="credits.html"><h2 class="tema-claro-escuro">Créditos</h2></a></button>
     </main>
-    <div id="side" class="invisible">
-        <div><img src="imgs/hp-placeholder.png" id="icon"><span id="health"></span></div>
-        <div><img src="imgs/money-placeholder.png" id="icon"><span id="money"></span></div>
-        <ul id="selection"></ul>
-        <div id="stats" class="invisible">
-            <div><img src="imgs/atk-placeholder.png" id="icon"><span id="atk"></span></div>
-            <div><img src="imgs/speed-placeholder.png" id="icon"><span id="speed"></span></div>
-            <div id="upgrade" class="invisible"><button >Upgrade</button></div>
-            <div><img src="imgs/money-placeholder.png" id="icon"><span id="cost"></span></div>
-        </div>
-    </div>
-    <div id="battle" tabindex="0" class="invisible">
-    </div>
-    <script src="start.js"></script>
-    <script src="enemies.js"></script>
-    <script src="turrets.js"></script>
+
+    <script src="JS/jQuery.js"></script>
+    <script src="JS/pory.js"></script>
+
+    <script>
+        let entrePgs = 1;
+       $(poryEl).click(() => {
+        localStorage.setItem('tema', entrePgs);
+       });
+    </script>
 </body>
 </html>
