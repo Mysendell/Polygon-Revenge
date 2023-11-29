@@ -11,7 +11,6 @@ body {
     font-size: 3vmin;
     background-color: black;
     border: white solid;
-    background-image: url(imgs/474-porygon-z-g.png);
     background-repeat:no-repeat;
     background-size:contain;
 }
@@ -33,7 +32,7 @@ body {
     position: relative;
 }
 
-main, header{
+main{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,6 +52,8 @@ main, header{
 #map-select:not(.invisible) {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -241,32 +242,30 @@ a:hover, #Jogar:hover {
 }
 
 #pory{
+    display: inline-block;
     background-image: url(imgs/ani_bw_137.gif);
     background-repeat:no-repeat;
-    grid-column: 2;
     width: 8vw;
     height: 8vh;
     border: none;
     background-size: contain;
-    position: absolute;
-    top: -6vh;
-    
-}
-#porygrid{
-    display:grid;
-    grid-template-columns: 70vw 9vw;
-    position: relative;
 }
 
-#selector {
-    position: absolute;
+#selector{
+    display: flex;
+    padding: 1vh 0;
+    align-items: center;
 }
 
-#selector img {
-    width: 20px;
-    height: 45px;
+#map-less, #map-plus{
+    padding: 2vh 3vw;
 }
 
-#selector img:hover {
-    cursor: pointer;
+#map-less img, #map-plus img{
+    width: 4.5vmin;
+    height: 10vmin;
+}
+
+#map-number{
+    font-size: 2rem;
 }

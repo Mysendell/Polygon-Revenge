@@ -8,24 +8,14 @@
     <title>Polygon Revenge</title>
 </head>
 <body>
-    <header>
-        <span id="porygrid"><h1 id="title" class="tema-claro-escuro">Porygon Revenge <button id="pory"></button></h1></span>
-    </header>
-
     <main>
+        <h1 id="title" class="tema-claro-escuro">Polygon Revenge</h1>
         <button id="Jogar"><a href="jogo.html"><h2 class="tema-claro-escuro">Jogar</h2></a></button>
         <button id="Placar"><a href="placar.html"><h2 class="tema-claro-escuro">Placar</h2></a></button>
         <button id="Creditos"><a href="credits.html"><h2 class="tema-claro-escuro">Créditos</h2></a></button>
     </main>
-
+    <script src="JS/cheet.js"></script>
     <script src="JS/jQuery.js"></script>
     <script src="JS/pory.js"></script>
-
-    <script>
-        let entrePgs = 1;
-       $(poryEl).click(() => {
-        localStorage.setItem('tema', entrePgs);
-       });
-    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const bodyEl = document.querySelector("body");
+const bodyEl = document.body;
 const titleEl = document.querySelector("#title");
 const placarEl = document.querySelector("#Placar");
 const creditosEl = document.querySelector("#Creditos");
@@ -17,70 +17,40 @@ const mapNumberEl = document.querySelector("#map-number");
 const mapLessEl = document.querySelector("#map-less");
 const mapPlusEl = document.querySelector("#map-plus");
 const mapsEl = document.querySelector("#map-button");
+const mapImageEl = mapsEl.querySelector("img");
 const mapSelectorEl = document.querySelector("#map-select");
 const battlefieldEl = document.querySelector("#map");
-const $backBtn = document.getElementById("back-button");
+const backBtn = document.getElementById("back-button");
 const timer = ms => new Promise(res => setTimeout(res, ms));
 let playerHp = 100;
 let money = 100;
 let turretButtons = [];
-let mapas = ["imgs/Sketch2.png", "imgs/Sketch.png", "imgs/Sketch2.png"];
-let mapa;
+let mapas = ["imgs/Sketch2.png", "imgs/Sketch.png", "imgs/pory-base.png"];
+let mapa = 0;
 
-function selectMap(e) {
-    mapa = e.currentTarget.value;
+function startGame() {
     mapSelectorEl.classList.add("invisible");
-    switch(+mapa) {
-        case 0:
-            battlefieldEl.src = "imgs/Sketch2.png";
-            break;
-        case 1:
-            battlefieldEl.src = "imgs/Sketch2.png";
-            break;
-        case 2:
-            battlefieldEl.src = "imgs/Sketch2.png";
-            break;
-        default:
-            break;
-    }
-
-    for(let i = 0; i < mapsEl.length; i++) {
-        mapsEl[i].classList.add("invisible");
-    }
-
+    battlefieldEl.src = mapas[mapa];
+    healthEl.innerHTML = playerHp;
+    moneyEl.innerHTML = money;
     battleEl.classList.remove("invisible");
     sideEl.classList.remove("invisible");
     handler(mapa);
 }
 
-function startGame() {
-    mapSelectorEl.classList.remove("invisible");
-    
-    healthEl.innerHTML = playerHp;
-    moneyEl.innerHTML = money;
+mapsEl.addEventListener("click", startGame);
+
+function mapChange(increment){
+    mapa = (mapa + increment + 3) % 3;
+    mapImageEl.src = mapas[mapa];
+    mapNumberEl.innerHTML = mapa+1;
 }
 
-mapsEl.click( (e) => {
-    selectMap(e);
-    startGame();
-});
+mapLessEl.addEventListener("click", () => {mapChange(-1)});
 
-mapLessEl.click( () => {
-    if(mapNumberEl.innerHTML != 1) {
-        mapNumberEl.innerHTML -= 1;
-        mapsEl.innerHTML = "<img src='" + mapas[mapNumberEl.innerHTML - 1] + "'>";
-    } 
-});
+mapPlusEl.addEventListener("click", () => {mapChange(1)});
 
-mapPlusEl.click( () => {
-    if(mapNumberEl.innerHTML != mapas.length) {
-        mapNumberEl.innerHTML += 1;
-        mapsEl.innerHTML = "<img src='" + mapas[mapNumberEl.innerHTML - 1] + "'>";
-    } 
-});
-    
-$(document).keydown((e) => {
-    if (e.keyCode == 27) {
-        window.location.href = 'index.html';
-    }
-})git commit -m "some fixes and failed attempt at map selection"
+bodyEl.addEventListener("keydown", (e) => {
+    if (e.key === 'Escape')
+        location.replace('index.html');
+})

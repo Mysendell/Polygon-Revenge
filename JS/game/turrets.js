@@ -157,7 +157,7 @@ function spawnTurret(e) {
     smtSelected = 0;
 }
 
-battleEl.addEventListener("mouseup", (e) => {
+battlefieldEl.addEventListener("mouseup", (e) => {
     if(turID != -1){
         spawnTurret(e);
     }
